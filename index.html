@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-    <script rel="stylesheet" src="style.css"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+      <link rel="stylesheet" href="style.css">
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <h1>Finance Checker
+  <body>
+    <div class="header">
+      <h1>Finance Checker</h1>
+      <p>
+        Use this tool to check if your finances are well maintained, and to see
+        where you need to do some work.
+      </p>
+    </div>
+    <div class="container">
+      <div class="statement">
+        <h1>Income statement</h1>
+        <div class="income_container" id="statement_box">
+          <h1>Income</h1>
+          <ul id="income_list"></ul>
+        </div>
 
-    </h1>
-    <p>My first paragraph.</p>
+        <div class="expenses_container" id="statement_box">
+          <h1>Expenses</h1>
+          <ul id="expense_list"></ul>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
