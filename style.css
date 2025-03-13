@@ -28,12 +28,38 @@
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+
     display: flex;
     flex-direction: column;
+}
+
+.income_container {
+    background-color: #32B14A;
+}
+
+.expense_container {
+    background-color: #F1592A;
 }
 
 .balance_sheet {
     display: flex;
     flex-direction: row;
 }
+
+ul {
+    color: white;
+}
+
+#income_list {
+    list-style: none;
+    list-style-type: none;
+}
+
+Form {
+    display: flex;
+    flex-direction: row;
+    width: 30rem;
+}
+
+
+#select_option {}
