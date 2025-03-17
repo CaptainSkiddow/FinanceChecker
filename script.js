@@ -45,6 +45,13 @@ function load_balance() {
 };
 
 
+function totalStatement() {
+    var statementBalance = 0;
+    flowItems.forEach(item => {
+        statementBalance += item.amount;
+    })
+    console.log(statementBalance)
+}
 
 
 
@@ -52,3 +59,4 @@ load_statement();
 load_balance();
 
 console.log(flowItems);
+totalStatement();
