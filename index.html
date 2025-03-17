@@ -62,17 +62,26 @@
       </div>
     </div>
 
-    <div class="form_container">
-      <div class="addForm">
-        <form name="addForm" method="post">
-          <input type="text" id="addData">
-          <select id="select_option">
-            <option>test</option>
-            <option>test2</option>
-          </select>
 
-      </div>
+  </div>
 
+  <div class="form_container">
+    <div class="addForm">
+      <form id="addForm">
+        <label for="description">Description:</label>
+        <input type="text" id="description" placeholder="Enter description" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" required>
+
+        <label for="tag">Tag:</label>
+        <select id="tag" required>
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+
+        <button type="submit" id="addButton">Add Item</button>
+      </form>
     </div>
 
     <script src="script.js"></script>

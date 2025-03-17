@@ -21,6 +21,8 @@ const balanceItems = [
 
 
 function load_statement() {
+
+
     flowItems.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.description}: $${item.amount}`;
@@ -67,7 +69,43 @@ function totalStatement() {
     document.querySelector('#statement_balance').textContent = `$${netTotal}`;
 }
 
+function addToStatement() {
+    const description = document.querySelector('#description').value;
+    const amount = document.querySelector('#amount').value;
+    const tag = document.querySelector('#tag').value;
 
+    if (description && amount) {
+        flowItems.push({ description, amount, tag });
+        load_statement();
+        totalStatement();
+    }
+}
+
+// Add event listener for the form submission
+document.querySelector('#addForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Get values from the form
+    const description = document.querySelector('#description').value;
+    const amount = document.querySelector('#amount').value;
+    const tag = document.querySelector('#tag').value;
+
+    // Validate inputs
+    if (description && amount && tag) {
+        // Add the new item to the flowItems array
+        flowItems.push({ description, amount: parseInt(amount, 10), tag });
+        incomeList.innerHTML = '';
+        expenseList.innerHTML = '';
+        // Update the statement and balance
+        load_statement();
+        totalStatement();
+
+        // Clear the form fields
+        document.querySelector('#description').value = '';
+        document.querySelector('#amount').value = '';
+        document.querySelector('#tag').value = 'positive';
+    }
+});
 
 load_statement();
 load_balance();
