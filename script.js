@@ -8,7 +8,10 @@ const liabilityList = document.querySelector('#liability_list');
 
 const flowItems = [
     { description: 'Car', amount: '100', tag: 'negative' },
-    { description: 'Salary', amount: '1200', tag: 'positive' }
+    { description: 'House', amount: '900', tag: 'negative' },
+    { description: 'Salary', amount: '1200', tag: 'positive' },
+    { description: 'Toeslagen', amount: '100', tag: 'positive' },
+    { description: 'Photo gig', amount: '650', tag: 'positive' },
 ];
 
 const balanceItems = [
@@ -46,11 +49,22 @@ function load_balance() {
 
 
 function totalStatement() {
-    var statementBalance = 0;
-    flowItems.forEach(item => {
-        statementBalance += item.amount;
-    })
-    console.log(statementBalance)
+    const positiveTotal = flowItems
+        .filter(item => item.tag === 'positive')
+        .reduce((total, item) => total + parseInt(item.amount, 10), 0);
+
+    const negativeTotal = flowItems
+        .filter(item => item.tag === 'negative')
+        .reduce((total, item) => total + parseInt(item.amount, 10), 0);
+
+    const netTotal = positiveTotal - negativeTotal;
+
+    if (netTotal >= 0) {
+        document.querySelector('#statement_balance').style.color = 'green';
+    } else {
+        document.querySelector('#statement_balance').style.color = 'red';
+    }
+    document.querySelector('#statement_balance').textContent = `$${netTotal}`;
 }
 
 
