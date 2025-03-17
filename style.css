@@ -59,12 +59,17 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     align-items: center;
-    width: 80vw;
+    width: 100%;
 }
 
-.addForm {}
+.addForm {
+    width: 50%; 
+}
 
 
-#select_option {}
+main_wrapper {
+    display: flex;
+    flex-direction: row;
+
+}
