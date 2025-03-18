@@ -47,6 +47,8 @@
 }
 
 ul {
+    list-style: none;
+    list-style-type: none;
     color: white;
 }
 
@@ -64,12 +66,5 @@ ul {
 }
 
 .addForm {
-    width: 50%; 
-}
-
-
-main_wrapper {
-    display: flex;
-    flex-direction: row;
-
+    width: 50%;
 }

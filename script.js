@@ -21,19 +21,38 @@ const balanceItems = [
 
 
 function load_statement() {
+    // Clear the existing lists to avoid duplicates
+    incomeList.innerHTML = '';
+    expenseList.innerHTML = '';
 
-
-    flowItems.forEach(item => {
+    // Append items to the appropriate lists
+    flowItems.forEach((item, index) => {
         const li = document.createElement('li');
         li.textContent = `${item.description}: $${item.amount}`;
 
+        // Create a delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.style.marginLeft = '10px';
+        deleteButton.addEventListener('click', () => {
+            // Remove the item from the flowItems array
+            flowItems.splice(index, 1);
+            // Reload the statement and update totals
+            load_statement();
+            totalStatement();
+        });
+
+        // Append the delete button to the list item
+        li.appendChild(deleteButton);
+
+        // Append the list item to the appropriate list
         if (item.tag === 'positive') {
             incomeList.appendChild(li);
         } else if (item.tag === 'negative') {
             expenseList.appendChild(li);
         }
-    })
-};
+    });
+}
 
 
 function load_balance() {

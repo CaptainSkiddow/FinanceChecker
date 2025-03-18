@@ -22,72 +22,72 @@
 
 
 
-<div class="main_wrapper">
-
-
-
-  <div class="container">
-    <div class="statement">
-      <div class="statement_balance">
-        <h1>Balance</h1>
-        <h2 id="statement_balance"></h2>
-      </div>
-      <div class="income_container" id="statement_box">
-        <h1> Income</h1>
-        <ul id="income_list"></ul>
-      </div>
-
-      <div class="expense_container" id="statement_box">
-        <h1>Expenses</h1>
-        <ul id="expense_list"></ul>
-      </div>
-    </div>
-
-
+  <div class="main_wrapper">
 
 
 
     <div class="container">
-
-      <div class="balance_sheet">
-        <div class="assets" id="statement_box">
-          <h1>
-            Assets
-          </h1>
-          <ul id="asset_list"></ul>
+      <div class="statement">
+        <div class="statement_balance">
+          <h1>Balance</h1>
+          <h2 id="statement_balance"></h2>
         </div>
-        <div class="liabilities" id="statement_box">
-          <h1>
-            Liabilities
-          </h1>
-          <ul id="liability_list"></ul>
+        <div class="income_container" id="statement_box">
+          <h1> Income</h1>
+          <ul id="income_list"></ul>
+        </div>
+
+        <div class="expense_container" id="statement_box">
+          <h1>Expenses</h1>
+          <ul id="expense_list"></ul>
         </div>
       </div>
+
+
+
+
+
+      <div class="container">
+
+        <div class="balance_sheet">
+          <div class="assets" id="statement_box">
+            <h1>
+              Assets
+            </h1>
+            <ul id="asset_list"></ul>
+          </div>
+          <div class="liabilities" id="statement_box">
+            <h1>
+              Liabilities
+            </h1>
+            <ul id="liability_list"></ul>
+          </div>
+        </div>
+      </div>
+
+
     </div>
 
+    <div class="form_container">
+      <div class="addForm">
+        <form id="addForm">
+          <label for="description">Description:</label>
+          <input type="text" id="description" placeholder="Enter description" required>
 
-  </div>
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" placeholder="Enter amount" required>
 
-  <div class="form_container">
-    <div class="addForm">
-      <form id="addForm">
-        <label for="description">Description:</label>
-        <input type="text" id="description" placeholder="Enter description" required>
+          <label for="tag">Tag:</label>
+          <select id="tag" required>
+            <option value="positive">Positive</option>
+            <option value="negative">Negative</option>
+          </select>
 
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" placeholder="Enter amount" required>
+          <button type="submit" id="addButton">Add Item</button>
+        </form>
+      </div>
 
-        <label for="tag">Tag:</label>
-        <select id="tag" required>
-          <option value="positive">Positive</option>
-          <option value="negative">Negative</option>
-        </select>
-
-        <button type="submit" id="addButton">Add Item</button>
-      </form>
     </div>
-
-  </div>
 
     <script src="script.js"></script>
 </body>
